@@ -1,0 +1,10 @@
+---
+- name:  Windows Update
+  hosts: all
+  gather_facts: yes
+  tasks:
+    - name: Running Windows Update
+      win_updates:
+        category_names: ['SecurityUpdates','CriticalUpdates','UpdateRollups', 'Updates', 'DefinitionUpdates']
+        reboot: no
+        log_path: C:\Ansible\update_log.txt
