@@ -1,0 +1,11 @@
+---
+- name: win_reboot Module
+  hosts: all
+  gather_facts: true
+  tasks:
+    - name: Reboot
+      win_reboot:
+        msg: "reboot by Ansible"
+        pre_reboot_delay: 5
+        post_reboot_delay: 10
+        reboot_timeout: 2400
